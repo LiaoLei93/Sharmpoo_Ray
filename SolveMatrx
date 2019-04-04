@@ -1,1 +1,14 @@
-
+        /// <summary>
+        /// 获取数字字符串
+        /// </summary>
+        /// <param name="str"></param>
+        private void GetNumStr(string str)
+        {
+        str=Regex.Replace(str, @"[^\d.\d]", "");
+        // 如果是数字，则转换为decimal类型
+        if (Regex.IsMatch(str, @"^[+-]?\d*[.]?\d*$"))
+        {
+            decimal result = decimal.Parse(str);
+            Console.WriteLine("使用正则表达式提取数字");
+            Console.WriteLine(result);
+        }
